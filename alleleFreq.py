@@ -24,7 +24,12 @@ with open(filename, 'r') as f:
             elif "/" in sample:
                 genos = sample.split("/")
             else:
-                print(sample)
+                if sample!="0":
+                    minorallelecount+=1
+                elif sample=="0":
+                    refallelecount+=1
+                else:
+                    print(sample)
             for geno in genos:
                 if geno!="0":
                     minorallelecount+=1
