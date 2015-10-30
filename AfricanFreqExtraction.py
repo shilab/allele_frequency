@@ -16,14 +16,15 @@ fileToWrite = open ('NigerCongoFreq', 'w')
 # read line by line
 # write any population/line which is the same as first file into the desired write file 
 
-fileToWrite.write ('population'+'\t'+'pop-uid'+'\t'+'geo_region'+'\t'+'sample_uid'+'\t'
-		   +'sample_size'+'\t'+'locus_name'+'\t'+'site_name'+'\t'+'allele_namefrequency'+'\n')
+fileToWrite.write('population' + '\t' + 'pop-uid' + '\t' + 'geo_region' + '\t'  
+                   + 'sample_uid' + '\t' + 'sample_size' + '\t' + 'locus_name'  
+                   + '\t' + 'site_name' + '\t' + 'allele_namefrequency' + '\n')
 
 with open ('/projects/shilab_simplex/data/ALFRED/alfred.txt', 'r') as fileToRead2:
 	for line in fileToRead2:
 		population = line.split('\t')[0]
 		if population in read_data:
-			fileToWrite.write (line)
+			fileToWrite.write(line)
 
 # close both files 			
 fileToRead2.close()
